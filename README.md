@@ -96,6 +96,16 @@ serverless deploy
 You can invoke your deployed functions using the following
 
 ```bash
+# Activate a python envirionment locally
+python3 -m venv ./venv
+source venv/bin/activate
+pip install -r requirements.txt
+
+# Test locally
+serverless invoke local -f stats
+serverless invoke local -f sleep_timer --data '{ "sleep_timer":5 }'
+
+# Test Deployed version
 serverless invoke -f stats
 serverless invoke -f sleep_timer --data '{ "sleep_timer":5 }'
 ```
