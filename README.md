@@ -2,6 +2,8 @@
 
 Using Dyson Pure Cool Link python library & Serverless framework we implement a simple endpoint to control our Dyson device.
 
+![Dyson Quote](img/serverless-dyson-quote.png)
+
 ## Serverless Setup
 
 ### Setup Serverless
