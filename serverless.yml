@@ -1,0 +1,25 @@
+service: aws-serverless-dyson
+
+provider:
+  name: aws
+  runtime: python3.7
+  environment:
+    DYSON_EMAIL: ${ssm:devopstar-dyson-account-email}
+    DYSON_PASS: ${ssm:devopstar-dyson-account-password}
+    DYSON_LANG: ${ssm:devopstar-dyson-account-region}
+    DYSON_ENDPOINT: ${ssm:devopstar-dyson-mqtt-public-endpoint}
+
+functions:
+  stats:
+    handler: handler.stats
+    events:
+      - http:
+          path: stats
+          method: get
+
+plugins:
+  - serverless-python-requirements
+
+custom:
+  pythonRequirements:
+    dockerizePip: non-linux
