@@ -83,9 +83,25 @@ custom:
     dockerizePip: non-linux
 ```
 
+### Deploy
+
+```bash
+serverless deploy
+```
+
+### Invoke Function
+
+You can invoke your deployed functions using the following
+
+```bash
+serverless invoke -f stats
+serverless invoke -f sleep_timer --data '{ "sleep_timer":5 }'
+```
+
 ## Attribution
 
 - [UnitedIncome/serverless-python-requirements](https://github.com/UnitedIncome/serverless-python-requirements)
 - [CharlesBlonde/libpurecoollink](https://github.com/CharlesBlonde/libpurecoollink)
 - [AWS Lambda + Serverless Framework + Python — A Step By Step Tutorial — Part 1 “Hello World”](https://medium.com/devopslinks/aws-lambda-serverless-framework-python-part-1-a-step-by-step-hello-world-4182202aba4a)
 - [Managing secrets, API keys and more with Serverless](https://serverless.com/blog/serverless-secrets-api-keys/)
+- [Dyson Fan Pure Cool Link Hack!](http://aakira.hatenablog.com/entry/2016/08/12/012654)

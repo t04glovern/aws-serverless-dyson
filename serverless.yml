@@ -16,6 +16,12 @@ functions:
       - http:
           path: stats
           method: get
+  sleep_timer:
+    handler: handler.sleep_timer
+    events:
+      - http:
+          path: sleep
+          method: post
 
 plugins:
   - serverless-python-requirements
