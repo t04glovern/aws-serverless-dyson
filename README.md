@@ -1,6 +1,6 @@
 # Serverless Dyson Control Endpoint
 
-Using Dyson Pure Cool Link python library & Serverless framework we implement a simple endpoint to control our Dyson device.
+Using Dyson Pure Cool Link python library over MQTT & Serverless framework we implement a simple endpoint to control our Dyson device.
 
 ![Dyson Quote](img/serverless-dyson-quote.png)
 
@@ -35,10 +35,10 @@ You will receive the following files created for you
 Create the values for your secrets
 
 ```bash
-aws ssm put-parameter --name devopstar-dyson-account-email --type String --value <dyson-account-email>
-aws ssm put-parameter --name devopstar-dyson-account-password --type String --value <dyson-account-password>
-aws ssm put-parameter --name devopstar-dyson-account-region --type String --value <dyson-account-region>
-aws ssm put-parameter --name devopstar-dyson-mqtt-public-endpoint --type String --value <dyson-mqtt-public-endpoint>
+aws ssm put-parameter --name devopstar-dyson-account-email        --type String --value $dyson_account_email
+aws ssm put-parameter --name devopstar-dyson-account-password     --type String --value $dyson_account_password
+aws ssm put-parameter --name devopstar-dyson-account-region       --type String --value $dyson_account_region
+aws ssm put-parameter --name devopstar-dyson-mqtt-public-endpoint --type String --value $dyson_mqtt_public_endpoint
 ```
 
 Note the enties in the `serverless.yml` file, these will be substituded in for you by Serverless based on the parameters above.
